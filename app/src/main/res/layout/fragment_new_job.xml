@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".fragments.NewVehicleFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/new_item_title"
+            android:text="@string/new_job_ita" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/new_item_label"
+                android:text="@string/description_ita" />
+
+            <EditText
+                android:id="@+id/new_job_description_editText"
+                style="@style/new_item_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="4"
+                android:gravity="start"
+                android:hint="@string/insert_the_description_ita"
+                android:maxLines="10"
+                android:ellipsize="end"
+                android:scrollbars="vertical"
+                android:inputType="textMultiLine"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/new_item_label"
+                android:text="@string/hours_needed_ita" />
+
+            <EditText
+                android:id="@+id/new_job_hours_needed_editText"
+                style="@style/new_item_editText"
+                android:hint="@string/insert_hours_needed_ita"
+                android:inputType="numberDecimal"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/new_item_label"
+                android:text="@string/starting_date_ita" />
+
+            <EditText
+                android:id="@+id/new_job_start_date_editText"
+                style="@style/new_item_editText"
+                android:hint="@string/insert_job_start_date_ita"
+                android:inputType="date"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/new_item_label"
+                android:text="@string/end_date_ita" />
+
+            <EditText
+                android:id="@+id/new_job_end_date_editText"
+                style="@style/new_item_editText"
+                android:hint="@string/insert_job_end_date_ita" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/new_item_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/vehicle_ita" />
+
+            <Spinner
+                android:id="@+id/vehicle_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add_new_job_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/save_ita" />
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10sp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/left_textview_element"
+        style="@style/new_item_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Nome Cognome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="start"/>
+
+    <TextView
+        android:id="@+id/right_textview_element"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/new_item_label"
+        android:text="+39 000 00 00 00"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/client_name_textview_element"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="end"/>
+</LinearLayout>

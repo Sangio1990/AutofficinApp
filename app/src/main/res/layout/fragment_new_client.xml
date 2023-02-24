@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".fragments.NewClientFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:text="@string/new_client_ita"
+            style="@style/new_item_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/name_ita"
+                style="@style/new_item_label" />
+
+            <EditText
+                android:id="@+id/new_client_name_editText"
+                android:hint="@string/insert_name_ita"
+                style="@style/new_item_editText" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/surname_ita"
+                style="@style/new_item_label" />
+
+            <EditText
+                android:id="@+id/new_client_surname_editText"
+                android:hint="@string/insert_surname_ita"
+                style="@style/new_item_editText" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/phone_number"
+                style="@style/new_item_label" />
+
+            <EditText
+                android:id="@+id/new_client_phone_editText"
+                android:hint="@string/insert_phone_number_ita"
+                style="@style/new_item_editText"
+                android:inputType="phone"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/email_ita"
+                style="@style/new_item_label" />
+
+            <EditText
+                android:id="@+id/new_client_mail_editText"
+                android:hint="@string/insert_email_ita"
+                style="@style/new_item_editText" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add_new_client_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/save_ita" />
+
+
+    </LinearLayout>
+
+</FrameLayout>

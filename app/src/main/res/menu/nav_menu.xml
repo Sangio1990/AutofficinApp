@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/menu_clients"
+        android:title="Clienti"
+        android:icon="@drawable/ic_person">
+
+        <menu>
+            <item
+                android:id="@+id/menu_new_client"
+                android:orderInCategory="1"
+                android:title="@string/add_new_client_ita"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/menu_list_client"
+                android:orderInCategory="0"
+                android:title="@string/show_all_clients_ita"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menu_vehicles"
+        android:title="Veicoli">
+
+        <menu>
+            <item
+                android:id="@+id/menu_list_car"
+                android:orderInCategory="0"
+                android:title="@string/show_all_vehicles_ita"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/menu_new_car"
+                android:orderInCategory="1"
+                android:title="@string/add_new_vehicle_ita"
+                app:showAsAction="never" />
+
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menu_jobs"
+        android:title="Lavori">
+
+        <menu>
+            <item
+                android:id="@+id/menu_all_job"
+                android:orderInCategory="0"
+                android:title="@string/show_all_jobs_ita"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/menu_new_job"
+                android:orderInCategory="1"
+                android:title="@string/new_job_ita"
+                app:showAsAction="ifRoom" />
+
+        </menu>
+    </item>
+</menu>

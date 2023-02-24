@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.autofficinapp.fragments.HomePageFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_clientListFragment"
+            app:destination="@id/clientListFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_newClientFragment"
+            app:destination="@id/newClientFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_newVehicleFragment"
+            app:destination="@id/newVehicleFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_newJobFragment"
+            app:destination="@id/newJobFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_jobListFragment"
+            app:destination="@id/jobListFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_vehicleListFragment"
+            app:destination="@id/vehicleListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clientListFragment"
+        android:name="com.example.autofficinapp.fragments.ClientListFragment"
+        android:label="Lista Clienti"
+        tools:layout="@layout/fragment_client_list" >
+        <action
+            android:id="@+id/action_clientListFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment"
+            app:popUpTo="@id/homePageFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/newClientFragment"
+        android:name="com.example.autofficinapp.fragments.NewClientFragment"
+        android:label="Nuovo Cliente"
+        tools:layout="@layout/fragment_new_client">
+        <action
+            android:id="@+id/action_newClientFragment_to_clientListFragment"
+            app:destination="@id/clientListFragment"
+            app:popUpTo="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newVehicleFragment"
+        android:name="com.example.autofficinapp.fragments.NewVehicleFragment"
+        android:label="Nuovo Veicolo"
+        tools:layout="@layout/fragment_new_vehicle">
+        <action
+            android:id="@+id/action_newVehicleFragment_to_vehicleListFragment"
+            app:destination="@id/vehicleListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newJobFragment"
+        android:name="com.example.autofficinapp.fragments.NewJobFragment"
+        android:label="Nuovo Intervento"
+        tools:layout="@layout/fragment_new_job">
+        <action
+            android:id="@+id/action_newJobFragment_to_jobListFragment"
+            app:destination="@id/jobListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobListFragment"
+        android:name="com.example.autofficinapp.fragments.JobListFragment"
+        android:label="Lista Interventi"
+        tools:layout="@layout/fragment_job_list">
+        <action
+            android:id="@+id/action_jobListFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehicleListFragment"
+        android:name="com.example.autofficinapp.fragments.VehicleListFragment"
+        android:label="Lista Veicoli"
+        tools:layout="@layout/fragment_vehicle_list">
+        <action
+            android:id="@+id/action_vehicleListFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+</navigation>

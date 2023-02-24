@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".fragments.NewVehicleFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/new_item_title"
+            android:text="@string/new_vehicle_ita" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/new_item_label"
+                android:text="@string/brand_ita" />
+
+            <EditText
+                android:id="@+id/new_vehicle_brand_editText"
+                style="@style/new_item_editText"
+                android:hint="@string/insert_brand_ita" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/new_item_label"
+                android:text="@string/model_ita" />
+
+            <EditText
+                android:id="@+id/new_vehicle_model_editText"
+                style="@style/new_item_editText"
+                android:hint="@string/insert_model_ita" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/new_item_label"
+                android:text="@string/plate_number_ita" />
+
+            <EditText
+                android:id="@+id/new_vehicle_plate_number_editText"
+                style="@style/new_item_editText"
+                android:hint="@string/insert_plate_number_ita" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/new_item_label"
+                android:text="@string/chassis_ita" />
+
+            <EditText
+                android:id="@+id/new_vehicle_chassis_editText"
+                style="@style/new_item_editText"
+                android:hint="@string/insert_chassis_number_ita" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/new_item_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/owner_ita" />
+
+            <Spinner
+                android:id="@+id/client_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add_new_vehicle_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/save_ita" />
+    </LinearLayout>
+
+</FrameLayout>

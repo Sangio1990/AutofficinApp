@@ -26,8 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            tools:listitem="@layout/single_element_light"
-            />
+            tools:listitem="@layout/single_element_light" />
     </LinearLayout>
 
 </FrameLayout>

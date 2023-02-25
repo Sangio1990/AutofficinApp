@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:padding="10sp"
     android:orientation="horizontal"
-    android:background="#AAABAE">
+    android:background="#DDAAABAE">
 
     <TextView
         android:id="@+id/left_textview_element"

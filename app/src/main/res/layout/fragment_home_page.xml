@@ -11,61 +11,64 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <ImageView
+            android:src="@drawable/autofficinapp"
             android:id="@+id/textView"
             style="@style/new_item_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            android:scaleType="center"/>
+
+        <TextView
+            android:padding="15dp"
+            android:background="@drawable/round_background"
+            android:id="@+id/editTextTextPersonName"
+            style="@style/new_item_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/what_you_need_ita"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/new_vehicle_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
 
-        <TextView
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/new_item_label"
-            android:text="@string/what_you_need_ita"
-            android:textSize="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/new_vehicle_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.5" />
-
         <Button
 
             android:id="@+id/new_job_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/new_job_ita"
             app:layout_constraintBottom_toTopOf="@+id/new_client_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/new_vehicle_button"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintVertical_bias="0.5"
+            style="@style/button_style" />
 
         <Button
             android:id="@+id/new_client_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_new_client_ita"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/new_job_button"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintVertical_bias="0.5"
+            style="@style/button_style" />
 
 
         <Button
             android:id="@+id/new_vehicle_button"
+            style="@style/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_new_vehicle_ita"

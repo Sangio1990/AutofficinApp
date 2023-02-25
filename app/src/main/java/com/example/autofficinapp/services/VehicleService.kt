@@ -54,14 +54,11 @@ object VehicleService : IVehicleService {
             data = VehicleService.vehicleDao.getVehicle(id)
             job_done = true
         }
-
         // attesa attiva
         while (!job_done) {
             // attendo 50 millisecondi prima di verificare nuovamente la variabile
             Thread.sleep(50)
         }
-
         return data
     }
-
 }

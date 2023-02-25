@@ -23,8 +23,8 @@
             android:scaleType="centerCrop"
             />
 
+
         <androidx.fragment.app.FragmentContainerView
-            android:backgroundTint="#00000000"
             android:id="@+id/main_activity_navfragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"

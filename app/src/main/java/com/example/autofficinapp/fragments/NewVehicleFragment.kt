@@ -1,6 +1,7 @@
 package com.example.autofficinapp.fragments
 
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -37,6 +38,12 @@ class NewVehicleFragment : Fragment() {
 
         val clientNamesList = mutableListOf<String>()
         val clientList = ClientService.getAllClients()
+        if (clientList.size == 0){
+            val toast = Toast.makeText(context, "Per inserire un nuovo veicolo devi prima inserire un nuovo cliente!", Toast.LENGTH_LONG)
+            toast.setGravity(Gravity.BOTTOM,0,0)
+            toast.show()
+            findNavController().navigate(R.id.action_newVehicleFragment_to_newClientFragment)
+        }
         clientList.forEach {
             clientNamesList.add("${it.name} ${it.surname}")
         }

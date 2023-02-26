@@ -1,14 +1,12 @@
 package com.example.autofficinapp.fragments
 
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
+import android.widget.*
 import androidx.navigation.fragment.findNavController
 import com.example.autofficina.entities.Job
 import com.example.autofficinapp.R
@@ -39,6 +37,12 @@ class NewJobFragment : Fragment() {
 
         val vehicleTextList = mutableListOf<String>()
         val vehicleList = VehicleService.getAllVehicles()
+        if (vehicleList.size== 0){
+            val toast = Toast.makeText(context, "Per inserire un nuovo intervento devi prima inserire un veicolo", Toast.LENGTH_LONG)
+            toast.setGravity(Gravity.BOTTOM, 0, -100)
+            toast.show()
+            findNavController().navigate(R.id.action_newJobFragment_to_newVehicleFragment)
+        }
         vehicleList.forEach {
             vehicleTextList.add("${it.brand} ${it.model}: ${it.plateNumber}")
         }

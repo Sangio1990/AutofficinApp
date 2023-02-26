@@ -71,7 +71,9 @@
             <EditText
                 android:id="@+id/new_job_end_date_editText"
                 style="@style/new_item_editText"
-                android:hint="@string/insert_job_end_date_ita" />
+                android:hint="@string/insert_job_end_date_ita"
+                android:inputType="date"/>
+
         </LinearLayout>
 
 

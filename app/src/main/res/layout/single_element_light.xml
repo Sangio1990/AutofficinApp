@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/left_textview_element"
-        style="@style/new_item_label"
+        style="@style/new_item_label_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -23,7 +23,7 @@
         android:id="@+id/right_textview_element"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/new_item_label"
+        style="@style/new_item_label_light"
         android:text="+39 000 00 00 00"
         android:layout_weight="1"
         app:layout_constraintEnd_toEndOf="parent"

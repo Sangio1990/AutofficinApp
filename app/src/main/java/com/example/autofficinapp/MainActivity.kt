@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    // Aggiungi il listener per il click sull'icona del menu laterale nella action bar
+    // Aggiunge il listener per il click sull'icona del menu laterale nella action bar
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -104,16 +104,12 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    // Chiudi il menu laterale se l'utente preme il pulsante indietro
+    // Chiude il menu laterale se l'utente preme il pulsante indietro
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
         }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

@@ -6,28 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ClientListFragment">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/client_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/clientbanner"
+            app:layout_constraintBottom_toTopOf="@id/client_recyclerView"
+            app:layout_constraintDimensionRatio="7:1"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
-            android:id="@+id/client_list_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/client_list_ita"
-            android:layout_weight="10"
+            android:id="@+id/vehicle_list_title"
             style="@style/new_item_title"
-            android:gravity="center"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="75dp"
+            android:text="@string/client_list_ita"
+            app:layout_constraintBottom_toBottomOf="@id/client_banner"
+            app:layout_constraintTop_toTopOf="@id/client_banner" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/client_recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            tools:listitem="@layout/single_element_light"
-            />
-    </LinearLayout>
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/client_banner"
+            tools:listitem="@layout/single_element_light" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

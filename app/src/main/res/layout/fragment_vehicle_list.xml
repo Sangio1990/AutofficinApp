@@ -6,28 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".fragments.VehicleListFragment">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/vehicle_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/carbanner"
+            app:layout_constraintBottom_toTopOf="@id/vehicle_recyclerView"
+            app:layout_constraintDimensionRatio="7:1"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
             android:id="@+id/vehicle_list_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/vehicle_list_ita"
-            android:layout_weight="10"
             style="@style/new_item_title"
-            android:gravity="center"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="75dp"
+            android:text="@string/vehicle_list_ita"
+            app:layout_constraintBottom_toBottomOf="@id/vehicle_banner"
+            app:layout_constraintTop_toTopOf="@id/vehicle_banner" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/vehicle_recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            tools:listitem="@layout/single_element_light"
-            />
-    </LinearLayout>
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vehicle_banner"
+            tools:listitem="@layout/single_element_light" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

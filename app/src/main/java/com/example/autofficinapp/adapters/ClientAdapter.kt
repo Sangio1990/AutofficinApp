@@ -26,7 +26,8 @@ class ClientAdapter(val clientList: List<Client>):
         private const val VIEW_TYPE_ODD = 1
     }
     /**
-     * Metodo che crea una ViewHolder adatto ai dati passati
+     * Metodo che crea una ViewHolder adatto ai dati passati scegliendo se
+     * passare il layout light o dark
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -72,7 +73,5 @@ class ClientAdapter(val clientList: List<Client>):
         }"
         holder.leftTextView.text = fullName
         holder.rightTextView.text = client.email
-
     }
-
 }

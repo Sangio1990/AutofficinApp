@@ -8,16 +8,24 @@
     <style name="new_item_label">
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">5</item>
-        <item name="android:gravity">end</item>
+        <item name="android:gravity">center_vertical|end</item>
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:background">@color/grey</item>
+        <item name="android:paddingRight">5dp</item>
     </style>
 
     <style name="new_item_label_dark" parent="new_item_label">
         <item name="android:textColor">#000000</item>
+        <item name="android:background">#00FFFFFF</item>
     </style>
+
+    <style name="new_item_label_light" parent="new_item_label">
+        <item name="android:background">#00FFFFFF</item>
+    </style>
+
 
     <style name="new_item_editText">
         <item name="android:fontFamily">@font/roboto</item>
@@ -26,7 +34,9 @@
         <item name="android:layout_weight">2</item>
         <item name="android:ems">10</item>
         <item name="android:inputType">textPersonName</item>
-        <item name="android:textColor">#111111</item>
+        <item name="android:textColorHint">#000000</item>
+        <item name="android:background">@drawable/edit_text_border</item>
+        <item name="android:paddingStart">5dp</item>
     </style>
 
     <style name="new_item_editText_dark" parent="new_item_editText">
@@ -42,12 +52,23 @@
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="new_item_title_background" parent="new_item_title">
+        <item name="android:background">@color/grey</item>
+    </style>
 
     <style name="button_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:minWidth">300dp</item>
-        <item name="backgroundTint">#1027A8</item>
+        <item name="android:backgroundTint">#1027A8</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+    </style>
+
+    <style name="new_field_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingTop">5dp</item>
     </style>
 
 </resources>

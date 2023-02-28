@@ -13,7 +13,6 @@ import com.example.autofficinapp.dao.DatabaseVehiclesDao
 
 /**
  * Classe astratta che ha il compito di gestire il database
- *
  */
 @Database(
     version = GarageDatabase.VERSION,

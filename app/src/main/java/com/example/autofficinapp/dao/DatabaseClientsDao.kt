@@ -7,9 +7,9 @@ import androidx.room.Query
 import com.example.autofficina.entities.Client
 
 /**
- * Dao con le annotazioni
+ * Data Access Object (DAO) che implementa l'interfaccia ClientDao e utilizza le annotazioni Room per
+ * fornire i metodi necessari per l'accesso ai dati relativi ai Clienti dal database.
  */
-
 @Dao
 interface DatabaseClientsDao : ClientDao{
     @Query("SELECT * FROM clients")

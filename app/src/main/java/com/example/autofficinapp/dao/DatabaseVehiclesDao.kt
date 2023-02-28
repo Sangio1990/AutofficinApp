@@ -8,7 +8,8 @@ import com.example.autofficina.entities.Client
 import com.example.autofficina.entities.Vehicle
 
 /**
- * Dao con le annotazioni
+ * Data Access Object (DAO) che implementa l'interfaccia VehicleDao e utilizza le annotazioni Room per
+ * fornire i metodi necessari per l'accesso ai dati relativi ai Veicoli dal database.
  */
 @Dao
 interface DatabaseVehiclesDao : VehicleDao {

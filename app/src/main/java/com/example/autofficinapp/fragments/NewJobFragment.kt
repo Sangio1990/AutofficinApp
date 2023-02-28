@@ -14,9 +14,7 @@ import com.example.autofficinapp.services.JobService
 import com.example.autofficinapp.services.VehicleService
 
 /**
- * A simple [Fragment] subclass.
- * Use the [NewJobFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * Fragment per l'aggiunta di un nuovo lavoro.
  */
 class NewJobFragment : Fragment() {
     private lateinit var spinner: Spinner
@@ -26,7 +24,7 @@ class NewJobFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // Inflate del layout per questo fragment
         val view = inflater.inflate(R.layout.fragment_new_job, container, false)
         spinner = view.findViewById(R.id.vehicle_spinner)
         return view
@@ -38,15 +36,17 @@ class NewJobFragment : Fragment() {
         val vehicleTextList = mutableListOf<String>()
         val vehicleList = VehicleService.getAllVehicles()
         if (vehicleList.size== 0){
-            val toast = Toast.makeText(context, "Per inserire un nuovo intervento devi prima inserire un veicolo", Toast.LENGTH_LONG)
-            toast.setGravity(Gravity.BOTTOM, 0, -100)
-            toast.show()
+            // Visualizza un messaggio Toast se non ci sono veicoli nel sistema
+            Toast.makeText(context, "Per inserire un nuovo intervento devi prima inserire un veicolo", Toast.LENGTH_LONG).show()
+            // Naviga verso il frammento per aggiungere un nuovo veicolo
             findNavController().navigate(R.id.action_newJobFragment_to_newVehicleFragment)
         }
+        // Popola la lista di testo con i veicoli disponibili
         vehicleList.forEach {
             vehicleTextList.add("${it.brand} ${it.model}: ${it.plateNumber}")
         }
 
+        // Inizializza lo Spinner con la lista di testo dei veicoli disponibili
         val spinnerAdapter =
             ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, vehicleTextList)
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -63,8 +63,10 @@ class NewJobFragment : Fragment() {
             val endDate =
                 view.findViewById<EditText>(R.id.new_job_end_date_editText).text.toString()
 
+            // Ottiene l'ID del veicolo selezionato nello Spinner
             val vehicle_id = spinner.selectedItemPosition
             val selectedVehicle = vehicleList[vehicle_id]
+            // Aggiunge un nuovo lavoro nel servizio JobService
             JobService.addJob(
                 Job(
                     0,
@@ -75,6 +77,7 @@ class NewJobFragment : Fragment() {
                     selectedVehicle.id
                 )
             )
+            // Naviga verso il frammento per visualizzare la lista dei lavori
             findNavController().navigate(R.id.action_newJobFragment_to_jobListFragment)
         }
     }

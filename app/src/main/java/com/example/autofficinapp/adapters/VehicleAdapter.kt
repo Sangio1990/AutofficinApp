@@ -10,12 +10,15 @@ import com.example.autofficinapp.R
 import com.example.autofficinapp.services.ClientService
 
 /**
- * Adapter il cui compito è quello di gestire la visualizzazione dei dati nella RecyclerView
- * @param vehicleList: List<Vehicle>  ->  Lista di persone
+ * Adapter per la visualizzazione dei lavori nella RecyclerView
+ * @param vehicleList: List<Vehicle> -> Lista di veicoli da visualizzare
  * @return viewHolder: View -> La view da mostrare
  */
 class VehicleAdapter(val vehicleList: List<Vehicle>) :
     RecyclerView.Adapter<VehicleAdapter.viewHolder>() {
+    /**
+     * ViewHolder che contiene le due TextView per visualizzare i dati
+     */
     class viewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val leftTextView: TextView = view.findViewById(R.id.left_textview_element)
         val rightTextView: TextView = view.findViewById(R.id.right_textview_element)
@@ -27,7 +30,10 @@ class VehicleAdapter(val vehicleList: List<Vehicle>) :
     }
 
     /**
-     * Metodo che crea una ViewHolder adatto ai dati passati
+     * Metodo che crea una ViewHolder adatta ai dati passati
+     * @param parent -> Il ViewGroup in cui viene visualizzata la RecyclerView
+     * @param viewType -> Il tipo di view da creare, pari o dispari
+     * @return ViewHolder -> La ViewHolder creata
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -44,29 +50,32 @@ class VehicleAdapter(val vehicleList: List<Vehicle>) :
     /**
      * Metodo che calcola quale tipo di view deve venire applicata e
      * restituisce se la riga di visualizzazione è pari o dispari
+     * @param position -> La posizione dell'elemento nella lista
+     * @return Int -> Il tipo di view, pari o dispari
      */
     override fun getItemViewType(position: Int): Int {
         return if (position % 2 == 0) VIEW_TYPE_EVEN else VIEW_TYPE_ODD
     }
 
     /**
-     * @return Int -> Numero di elementi da presentare
+     * Metodo che restituisce il numero di elementi da visualizzare
+     * @return Int -> Il numero di elementi da visualizzare
      */
     override fun getItemCount(): Int = vehicleList.size
 
 
     /**
-     * Metodo che ha il compito di presentare UN singolo dato
-     * @param position -> Posizione dell'elemento nella lista
-     * @param holder -> Il ViewHolder preparato da onCreateViewHolder
+     * Metodo che presenta UN singolo veicolo nella RecyclerView
+     * @param holder -> La ViewHolder che contiene le due TextView
+     * @param position -> La posizione del veicolo nella lista
      */
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
         val vehicle = vehicleList[position]
-        // Rendo il primo carattere del nome e del cognome in uppercase
         val text = "${vehicle.brand} ${vehicle.model}: ${vehicle.plateNumber}"
         holder.leftTextView.text = text
         val carOwner = vehicle.clientId?.let { ClientService.getClient(it) }
-        // Controllo se carOwner sia nullo, in caso non venga trovato uso una stringa di default
+
+        // Se il cliente non esiste, usa una stringa di default
         if (carOwner != null) {
             holder.rightTextView.text = "${carOwner.name} ${carOwner.surname}"
         } else {

@@ -10,12 +10,15 @@ import com.example.autofficinapp.R
 import java.util.*
 
 /**
- * Adapter il cui compito è quello di gestire la visualizzazione dei dati nella RecyclerView
- * @param clientList: List<Client>  ->  Lista di persone
+ * Adapter per la visualizzazione dei lavori nella RecyclerView
+ * @param clientList: List<Client> -> Lista di clienti da visualizzare
  * @return viewHolder: View -> La view da mostrare
  */
 class ClientAdapter(val clientList: List<Client>):
     RecyclerView.Adapter<ClientAdapter.viewHolder>() {
+    /**
+     * ViewHolder che contiene le due TextView per visualizzare i dati
+     */
     class viewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val leftTextView: TextView = view.findViewById(R.id.left_textview_element)
         val rightTextView: TextView = view.findViewById(R.id.right_textview_element)
@@ -26,8 +29,10 @@ class ClientAdapter(val clientList: List<Client>):
         private const val VIEW_TYPE_ODD = 1
     }
     /**
-     * Metodo che crea una ViewHolder adatto ai dati passati scegliendo se
-     * passare il layout light o dark
+     * Metodo che crea una ViewHolder adatta ai dati passati
+     * @param parent -> Il ViewGroup in cui viene visualizzata la RecyclerView
+     * @param viewType -> Il tipo di view da creare, pari o dispari
+     * @return ViewHolder -> La ViewHolder creata
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -40,20 +45,27 @@ class ClientAdapter(val clientList: List<Client>):
         return viewHolder(itemView)
     }
 
+    /**
+     * Metodo che calcola quale tipo di view deve venire applicata e
+     * restituisce se la riga di visualizzazione è pari o dispari
+     * @param position -> La posizione dell'elemento nella lista
+     * @return Int -> Il tipo di view, pari o dispari
+     */
     override fun getItemViewType(position: Int): Int {
         return if (position % 2 == 0) VIEW_TYPE_EVEN else VIEW_TYPE_ODD
     }
 
     /**
-     * @return Int -> Numero di elementi da presentare
+     * Metodo che restituisce il numero di elementi da visualizzare
+     * @return Int -> Il numero di elementi da visualizzare
      */
     override fun getItemCount(): Int = clientList.size
 
 
     /**
-     * Metodo che ha il compito di presentare UN singolo dato
-     * @param position -> Posizione dell'elemento nella lista
-     * @param holder -> Il ViewHolder preparato da onCreateViewHolder
+     * Metodo che presenta UN singolo cliente nella RecyclerView
+     * @param holder -> La ViewHolder che contiene le due TextView
+     * @param position -> La posizione del cleinte nella lista
      */
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
         val client = clientList[position]
